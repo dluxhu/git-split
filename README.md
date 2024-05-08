@@ -22,4 +22,4 @@ I would not recommend creating more than one review branch (the one you send for
 
 ## Note
 
-If your branch name that you are developing is different, you have to update the script.
+* If your branch name that you are developing against is not `master`, you have to update the script. It would be easy to add a command-line parameter or environment variable to specify this, but I leave it to you as an exercise.
