@@ -1,13 +1,14 @@
 #!/bin/sh
-if [ "$#" -eq 0 ]; then
-  echo "Usage: $0 new-branch-name"
+if [ "$#" -eq 1 ]; then
+  BRANCH="$1"
+  BASE="master"
+elif [ "$#" -eq 2]; then
+  BRANCH="$1"
+  BASE="$2"
+else
+  echo "Usage: $0 new-branch-name [base_branch_name]"
   exit 1
 fi
 set -e
-BRANCH="git-split-$(date +%Y%m%d-%H%M%S)"
-git branch "$BRANCH"
-git checkout "$BRANCH"
-git reset --soft master
-git branch "$1"
-git checkout "$1"
-git branch -d "$BRANCH"
+git checkout -B "$BRANCH"
+git reset --soft "$BASE"
