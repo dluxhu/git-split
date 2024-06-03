@@ -26,4 +26,8 @@ I would not recommend creating more than one review branch and one work branch f
 
 ## Note
 
-* If your branch name that you are developing against is not `master`, you have to update the script. It would be easy to add a command-line parameter or environment variable to specify this, but I leave it to you as an exercise.
+* If your branch name that you are developing against is not `master`, you can specify the base branch as a second parameter:
+
+  ```
+  git-split task1-part1 main
+  ```
